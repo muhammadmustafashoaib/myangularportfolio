@@ -19,7 +19,7 @@ import { ProposalsComponent } from './Components/proposals/proposals.component';
       { 
         path: 'dashboard',
         component: DashboardCompiledComponent,
-        canActivate: [authGuard]
+        
       },
         { path: 'overview', component: NewtaskComponent },
         { path: 'form', component: CompiledreactiveComponent },
@@ -31,7 +31,7 @@ import { ProposalsComponent } from './Components/proposals/proposals.component';
       { path: 'faqs', component: FaqsComponent },
       {path:'investmentproposal', component: ProposalsComponent },
       
-      { path: '', redirectTo: '/login', pathMatch: 'full' }
+      { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
     ];
     
   
