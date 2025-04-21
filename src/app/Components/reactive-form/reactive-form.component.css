@@ -1,0 +1,7 @@
+.form-input {
+  @apply w-full p-3 rounded-lg shadow-sm bg-white placeholder-gray-400 text-gray-700 border transition-all duration-300 focus:ring-2 focus:ring-blue-400 focus:outline-none;
+}
+
+.error-popup {
+  @apply absolute text-red-600 text-xs mt-1;
+}

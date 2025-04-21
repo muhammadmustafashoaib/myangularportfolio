@@ -1,0 +1,188 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: #f0f2f5;
+  font-size: 1rem;
+}
+
+.form-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  font-size: 0.9rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.form-grid label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-weight: 600;
+  font-size: 0.75rem;
+  color: #333;
+}
+
+input[type="text"],
+select {
+  width: 100%;
+  padding: 0.5rem 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  background-color: #fff;
+  color: #333;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+}
+
+input.ng-valid.ng-touched,
+select.ng-valid.ng-touched {
+  border-color: #4caf50;
+}
+
+input.ng-invalid.ng-touched,
+select.ng-invalid.ng-touched {
+  border-color: #f44336;
+}
+
+.checkbox-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  padding-top: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.checkbox-row label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  color: #444;
+}
+
+button {
+  grid-column: 1 / -1;
+  width: fit-content;
+  margin: auto;
+  padding: 0.55rem 1.5rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1.5rem;
+}
+
+button:hover:not(:disabled) {
+  background-color: #0056b3;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+button:active:not(:disabled) {
+  background-color: #004999;
+  transform: scale(0.98);
+}
+
+button:disabled,
+.disabled-btn {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.back-arrow {
+  display: flex;
+  align-items: center;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+  margin-bottom: 1rem;
+  transition: color 0.3s;
+}
+
+.back-arrow:hover {
+  color: #007bff;
+}
+
+.back-arrow-icon {
+  font-size: 1.8rem;
+  margin-right: 0.5rem;
+}
+
+/* 📱 Mobile-specific */
+@media (max-width: 768px) {
+  .form-container {
+    padding: 1.25rem;
+    margin: 1rem;
+    font-size: 0.85rem;
+  }
+
+  input[type="text"],
+  select {
+    font-size: 0.75rem;
+    padding: 0.45rem 0.6rem;
+  }
+
+  .form-grid label {
+    font-size: 0.65rem;
+  }
+
+  .checkbox-row {
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 0.75rem;
+  }
+
+  button {
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .back-arrow {
+    font-size: 1.2rem;
+  }
+
+  .back-arrow-icon {
+    font-size: 1.4rem;
+  }
+}
+
+.success-message {
+  color: green;
+  margin-top: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+

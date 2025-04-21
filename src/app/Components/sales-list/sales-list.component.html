@@ -1,0 +1,62 @@
+<!-- Parent Wrapper to control vertical alignment -->
+<div class="page-wrapper">
+  <div class="sales-container">
+    <!-- Top Action Bar -->
+    <div class="action-bar">
+      <input
+        type="text"
+        [(ngModel)]="searchTerm"
+        (input)="filterData()"
+        class="search-input"
+        placeholder="Search by client, invoice, or status..."
+      />
+      <button class="add-btn" (click)="addNewSale()">
+        <i class="fas fa-plus"></i> Add New
+      </button>
+    </div>
+
+    <!-- Table -->
+    <div class="table-wrapper ">
+      <table class="sales-table">
+        <thead>
+          <tr>
+            <th>Invoice</th>
+            <th>Client</th>
+            <th>Amount</th>
+            <th>Status</th>
+            <th>Tax Exempt</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let sale of paginatedSales">
+            <td>{{ sale.invoiceNumber }}</td>
+            <td>{{ sale.clientName }}</td>
+            <td>{{ sale.amount }}</td>
+            <td>{{ sale.status }}</td>
+            <td>
+              <span class="tax-chip" [class.enabled]="sale.taxExempt">
+                {{ sale.taxExempt ? 'Yes' : 'No' }}
+              </span>
+            </td>
+            <td>
+              <button class="action-icon" (click)="editSale(sale)">
+                <i class="fas fa-edit"></i>
+              </button>
+              <button class="action-icon delete" (click)="deleteSale(sale)">
+                <i class="fas fa-trash"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination-controls">
+      <button [disabled]="currentPage === 1" (click)="prevPage()">Previous</button>
+      <span>Page {{ currentPage }} of {{ totalPages }}</span>
+      <button [disabled]="currentPage === totalPages" (click)="nextPage()">Next</button>
+    </div>
+  </div>
+</div>

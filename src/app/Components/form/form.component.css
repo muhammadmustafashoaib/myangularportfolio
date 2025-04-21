@@ -1,0 +1,56 @@
+.allocation-form {
+    padding: 1rem;
+    border-radius: 6px;
+  
+    .form-row {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+  
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+  
+      select, input[type="text"], input[type="date"] {
+        padding: 0.5rem;
+        border-radius: 5px;
+        border: 2px solid #ccc;
+        transition: border-color 0.3s;
+      }
+  
+      input.ng-invalid.ng-touched, 
+      select.ng-invalid.ng-touched {
+        border-color: red;
+      }
+  
+      input.ng-valid.ng-touched,
+      select.ng-valid.ng-touched {
+        border-color: green;
+      }
+    }
+  
+    .checkbox {
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+      gap: 0.5rem;
+    }
+  
+    .submit-button {
+      padding: 0.5rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+      margin-top: 1rem;
+  
+      &:disabled {
+        background-color: #a0a0a0;
+        cursor: not-allowed;
+      }
+    }
+  }
+  

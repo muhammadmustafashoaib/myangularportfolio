@@ -1,0 +1,110 @@
+<div class="p-2 flex justify-center items-start">
+  <form
+    [formGroup]="profileForm"
+    (ngSubmit)="confirmSubmit()"
+    class="w-full md:p-4 p-6 shadow-xl rounded-xl space-y-5 border border-gray-200 text-[10px] md:text-xs bg-green-50 transition-all duration-500"
+  >
+    <h2 class="text-base font-semibold text-gray-800 text-center">Your Information</h2>
+
+    <!-- First + Father's Name -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="relative">
+        <input
+          formControlName="firstName"
+          placeholder="Your Name"
+          [ngClass]="inputClass('firstName')"
+        />
+        <p *ngIf="showError('firstName')" class="text-xs text-red-500 mt-1">Name is required</p>
+      </div>
+      <div class="relative">
+        <input
+          formControlName="lastName"
+          placeholder="Your Father's Name"
+          [ngClass]="inputClass('lastName')"
+        />
+        <p *ngIf="showError('lastName')" class="text-xs text-red-500 mt-1">Father's name is required</p>
+      </div>
+    </div>
+
+    <!-- DOB -->
+    <div class="relative">
+      <input
+        formControlName="dob"
+        type="date"
+        [ngClass]="inputClass('dob')"
+      />
+      <p *ngIf="showError('dob')" class="text-xs text-red-500 mt-1">Date of birth is required</p>
+    </div>
+
+    <!-- User Type -->
+    <input
+      formControlName="userType"
+      class="form-input bg-gray-100 text-gray-500 cursor-not-allowed"
+    />
+
+    <!-- Country -->
+    <div class="relative">
+      <select
+        formControlName="nationality"
+        [ngClass]="inputClass('nationality')"
+        class="form-select"
+      >
+        <option value="">Select Country</option>
+        <option *ngFor="let country of countries" [value]="country">{{ country }}</option>
+      </select>
+      <p *ngIf="showError('nationality')" class="text-xs text-red-500 mt-1">Country is required</p>
+    </div>
+
+    <!-- Email -->
+    <div class="relative">
+      <input
+        formControlName="email"
+        type="email"
+        placeholder="Your Email Address (abc@gmail.com)"
+        [ngClass]="inputClass('email')"
+      />
+      <p *ngIf="showError('email')" class="text-xs text-red-500 mt-1">{{ emailErrorMessage() }}</p>
+    </div>
+
+    <!-- About Me -->
+    <div class="relative">
+      <textarea
+        formControlName="aboutMe"
+        rows="3"
+        placeholder="Enter More Detail"
+        [ngClass]="inputClass('aboutMe')"
+        class="resize-none"
+      ></textarea>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="flex justify-center">
+      <button
+        type="submit"
+        class="w-1/3 text-xs bg-gradient-to-r from-green-700 to-green-900 text-white py-2 rounded-md font-semibold hover:from-blue-600 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:from-gray-300 disabled:to-gray-400 disabled:cursor-not-allowed transform transition-transform duration-500"
+        [ngClass]="{
+          'translate-x-0': profileForm.valid,
+          '-translate-x-6': !profileForm.valid
+        }"
+      >
+        Save changes
+      </button>
+    </div>
+  </form>
+
+  <!-- Confirmation Dialog -->
+  <div *ngIf="showConfirmDialog" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center z-50">
+    <div class="bg-white p-6 rounded-lg shadow-lg w-[300px] text-center">
+      <h3 class="text-base font-semibold mb-4">Are you sure you want to save changes?</h3>
+      <div class="flex justify-center gap-4">
+        <button (click)="submitForm()" class="px-4 py-2 md:px-7 bg-green-600 text-white rounded hover:bg-green-700">Yes</button>
+        <button (click)="showConfirmDialog = false" class="px-4 md:px-7 py-2 bg-gray-300 rounded hover:bg-gray-400">No</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Success Message -->
+  <div *ngIf="showSuccessMessage" class="fixed top-4 right-4 bg-green-500 text-white px-4 py-2 rounded shadow z-50 text-sm">
+    Profile updated successfully!
+  </div>
+</div>

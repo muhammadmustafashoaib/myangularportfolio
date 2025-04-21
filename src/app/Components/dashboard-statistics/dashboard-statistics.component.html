@@ -1,0 +1,43 @@
+<div class="container mx-auto p-4 text-sm">
+  <h1 class="text-base font-semibold mb-4">My Statistics</h1>
+
+  <div class="bg-white rounded shadow-md p-4 mb-4">
+    <h2 class="text-sm font-medium mb-3">My US Dollar Wallet</h2>
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+      <div>
+        <p class="text-xs">Total Balance</p>
+        <p class="font-bold text-lg">{{ totalBalance | currency }}</p>
+      </div>
+      <div>
+        <p class="text-xs">Locked Precommitted Funds</p>
+        <p class="font-bold text-lg">{{ lockedFunds | currency }}</p>
+      </div>
+      <div>
+        <p class="text-xs">Available Investment Balance</p>
+        <p class="font-bold text-lg">{{ availableBalance | currency }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-2 gap-4">
+    <div class="bg-white rounded shadow-md p-2">
+      <p class="text-xs font-medium">My Total Investment</p>
+      <p class="text-lg font-bold">{{ totalInvestment | currency }}</p>
+    </div>
+
+    <div class="bg-white rounded shadow-md p-2">
+      <p class="text-xs font-medium">My Average Investment</p>
+      <p class="text-lg font-bold">{{ averageInvestment | currency }}</p>
+    </div>
+
+    <div class="bg-white rounded shadow-md p-2">
+      <p class="text-xs font-medium">My Smallest Investment</p>
+      <p class="text-lg font-bold">{{ smallestInvestment | currency }}</p>
+    </div>
+
+    <div class="bg-white rounded shadow-md p-2">
+      <p class="text-xs font-medium">My Largest Investment</p>
+      <p class="text-lg font-bold">{{ largestInvestment | currency }}</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,67 @@
+<div class="bg-gradient-to-b from-[#E6F4EA] to-[#F1FFF8] pb-6 mt-3">
+  <!-- Main Container -->
+  <div class="container mx-auto px-4">
+    <!-- Header Section -->
+    <div class="flex flex-col md:flex-row items-center justify-around">
+      <div class="font-bold text-xl md:text-2xl text-[#064E3B] text-center md:text-left">
+        <h1 class="mt-8">Seamlessly Invest in IPOs</h1>
+        <h1 class="text-center">In Just a Few Steps</h1>
+      </div>
+      <h1 class="text-[#16A34A] mt-4 md:mt-8 text-center md:text-left text-xs">A streamlined process, designed by our team</h1>
+    </div>
+
+    <!-- Steps Section -->
+    <div class="flex flex-col md:flex-row items-center justify-around mt-8 space-y-6 md:space-y-0 md:space-x-6">
+      <div class="w-full md:w-3/5 flex flex-col items-center">
+        <!-- Step 1 -->
+        <div class="w-3/5 md:w-3/4 lg:w-2/3 p-4 rounded-lg shadow-sm border-[#A7F3D0]">
+          <div class="flex items-center justify-around cursor-pointer" (click)="toogleAccordion(1)">
+            <h1 class="text-sm font-medium text-center w-full text-[#065F46]">Browse Live & Upcoming IPOs</h1>
+            <img src="/assets/svgs/2-investinsteps/2-upperarrow.svg" class="w-4 ml-2" [class.rotate-180]="openAccordionId === 1">
+          </div>
+          <div *ngIf="openAccordionId === 1" class="mt-3 text-xs text-[#475569] text-center">
+            <p>Get detailed insights into IPOs curated and presented through our platform.</p>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="w-3/5 md:w-3/4 lg:w-2/3 p-4 rounded-lg shadow-sm mt-4  border-[#A7F3D0]">
+          <div class="flex items-center justify-between cursor-pointer" (click)="toogleAccordion(2)">
+            <h1 class="text-sm font-medium text-center w-full text-[#065F46]">Generate Your Investor Number</h1>
+            <img src="/assets/svgs/2-investinsteps/2-upperarrow.svg" class="w-4 ml-2" [class.rotate-180]="openAccordionId === 2">
+          </div>
+          <div *ngIf="openAccordionId === 2" class="mt-3 text-xs text-[#475569] text-center">
+            <p>Start your IPO journey with ease by registering your National Investor Number.</p>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="w-3/5 md:w-3/4 lg:w-2/3 p-4 rounded-lg shadow-sm mt-4  border-[#A7F3D0]">
+          <div class="flex items-center justify-between cursor-pointer" (click)="toogleAccordion(3)">
+            <h1 class="text-sm font-medium text-center w-full text-[#065F46]">Make Your Investment</h1>
+            <img src="/assets/svgs/2-investinsteps/2-upperarrow.svg" class="w-4 ml-2" [class.rotate-180]="openAccordionId === 3">
+          </div>
+          <div *ngIf="openAccordionId === 3" class="mt-3 text-xs text-[#475569] text-center">
+            <p>Choose your desired IPO and place your investment directly through the platform.</p>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="w-3/5 md:w-3/4 lg:w-2/3 p-4 rounded-lg shadow-sm mt-4  border-[#A7F3D0]">
+          <div class="flex items-center justify-between cursor-pointer" (click)="toogleAccordion(4)">
+            <h1 class="text-sm font-medium text-center w-full text-[#065F46]">Monitor Your Portfolio</h1>
+            <img src="/assets/svgs/2-investinsteps/2-upperarrow.svg" class="w-4 ml-2" [class.rotate-180]="openAccordionId === 4">
+          </div>
+          <div *ngIf="openAccordionId === 4" class="mt-3 text-xs text-[#475569] text-center">
+            <p>Track your investments and portfolio performance in real time.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image Section -->
+      <div class="w-full md:w-2/5 flex justify-center">
+        <img src="assets/svgs/2-investinsteps/1mobile.svg" class="w-1/2 md:w-2/3" alt="Mobile Illustration" />
+      </div>
+    </div>
+  </div>
+</div>

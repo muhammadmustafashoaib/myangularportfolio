@@ -1,0 +1,61 @@
+<div class="form-container">
+  <a href="/sales" class="back-arrow">
+    <span class="back-arrow-icon">&larr;</span> 
+  </a>
+  <form [formGroup]="form" (ngSubmit)="confirmSubmit()" class="form-grid">
+    <div>
+      <label>Code</label>
+      <input type="text" formControlName="code" [ngClass]="inputClass('code')" />
+    </div>
+
+    <div>
+      <label>Title</label>
+      <input type="text" formControlName="title" placeholder="Enter Title" [ngClass]="inputClass('title')" />
+    </div>
+
+    <div>
+      <label>Classification</label>
+      <select formControlName="classification" [ngClass]="inputClass('classification')">
+        <option value="" disabled>Select Classification</option>
+        <option *ngFor="let cls of ['A', 'B', 'C']" [value]="cls">{{ cls }}</option>
+      </select>
+    </div>
+
+    <div>
+      <label>Principle</label>
+      <select formControlName="principle" [ngClass]="inputClass('principle')">
+        <option value="" disabled>Select Principle</option>
+        <option *ngFor="let p of ['P1', 'P2', 'P3']" [value]="p">{{ p }}</option>
+      </select>
+    </div>
+
+    <div>
+      <label>Frequency</label>
+      <input type="text" formControlName="frequency" placeholder="Enter Frequency" [ngClass]="inputClass('frequency')" />
+    </div>
+
+    <div>
+      <label>Description</label>
+      <input type="text" formControlName="description" placeholder="Enter Description" [ngClass]="inputClass('description')" />
+    </div>
+
+    <div class="checkbox-row">
+      <label>
+        <input type="checkbox" formControlName="isActive" />
+        Active
+      </label>
+
+      <label>
+        <input type="checkbox" formControlName="isAdvanceTaxExempt" />
+        Advance Tax Exempt
+      </label>
+    </div>
+
+    <button type="submit" [disabled]="form.invalid">Submit</button>
+  </form>
+
+  <!-- Success Message -->
+  <div *ngIf="isSuccess" class="success-message">
+    <p>Form submitted successfully!</p>
+  </div>
+</div>
