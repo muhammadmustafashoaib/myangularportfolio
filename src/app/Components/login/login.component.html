@@ -1,10 +1,10 @@
-<div class="flex flex-col md:flex-row min-h-screen md:h-[600px] font-sans">
+<div class="flex flex-col md:flex-row min-h-screen md:h-[600px] font-sans text-gray-900">
   <!-- Left Section -->
-  <div class="hidden md:flex w-[40%] bg-gradient-to-tl from-[#004D40] to-[#00695C] p-8 md:p-12 text-white">
-    <div class="w-full mt-24">
-      <h1 class="text-2xl font-bold">Grow Your Wealth with</h1>
-      <h1 class="text-2xl font-bold">Smart Investments</h1>
-      <div class="bg-[#1E2F3C] rounded-[45px] py-3 px-5 mt-6 w-[90%]">
+  <div class="hidden md:flex md:w-[40%] bg-gradient-to-tl from-[#004D40] to-[#00695C] p-6 md:p-10 text-white">
+    <div class="mt-16 w-full space-y-4">
+      <h1 class="text-xl md:text-2xl font-bold">Grow Your Wealth with</h1>
+      <h1 class="text-xl md:text-2xl font-bold">Smart Investments</h1>
+      <div class="bg-[#1E2F3C] rounded-full py-3 px-5 mt-4 w-[90%]">
         <p class="text-sm">Get insights, tips, and early</p>
         <p class="text-sm">access to investment strategies</p>
       </div>
@@ -12,79 +12,60 @@
   </div>
 
   <!-- Right Section -->
-  <div class="w-full md:w-[60%] flex flex-col items-center px-4 sm:px-8">
-    <div class="mt-20 md:mt-28 text-center">
-      <h1 class="text-gray-400 text-sm md:text-base mb-1">Welcome Back to InvestSmart!</h1>
-   
-      <p class="text-xs md:text-xs mt-2"> User ID: <span class="font-semibold text-green-900">admin</span> , Password: <span class="font-semibold  text-green-900">Test123@</span>  </p>
-
+  <div class="w-full md:w-[60%] flex flex-col items-center px-4 sm:px-6">
+    <div class="mt-16 md:mt-28 text-center space-y-2">
+      <h1 class="text-gray-500 text-sm md:text-base">Welcome Back to InvestSmart!</h1>
+      <p class="text-xs md:text-sm">User ID: <span class="font-semibold text-green-900">admin</span> , Password: <span class="font-semibold text-green-900">Test123@</span></p>
     </div>
 
     <!-- Login Form -->
-    <div class="w-full max-w-[380px] md:max-w-[400px]">
-      
-      <form class="mt-6" [formGroup]="Form" (ngSubmit)="onSubmit()">
-        <!-- Email Field -->
-        <div class="relative">
+    <div class="w-full max-w-[320px] sm:max-w-[360px] md:max-w-[400px] mt-8">
+      <form [formGroup]="Form" (ngSubmit)="onSubmit()" class="space-y-6">
+        <div>
           <input
             formControlName="Username"
-            
-            class="peer block w-full px-3 pt-4 pb-2 text-xs md:text:sm text-gray-900 border-b-2 
-                   focus:outline-none transition-all duration-300 
-                   border-gray-300 focus:border-green-600 "
-            placeholder="User Id"
+            class="peer block w-full px-3 pt-4 pb-2 text-xs md:text-sm text-gray-900 border-b-2 border-gray-300 focus:outline-none focus:border-green-600 transition-all duration-300"
+            placeholder="User ID"
           />
         </div>
 
-        <!-- Password Field -->
-       <!-- Password Field -->
-<div class="relative mt-5">
-  <input
-    id="Password"
-    type="{{ showPassword ? 'text' : 'password' }}"
-    formControlName="Password"
-    class="peer block w-full px-3 pt-4 pb-2 text-xs md:text-xs text-gray-900 border-b-2 border-gray-300"
-    placeholder="Password"
-  />
-  
-  <!-- Eye Icon -->
-  <svg *ngIf="!showPassword" (click)="togglePasswordVisibility()"
-       xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-       stroke="currentColor" class="absolute top-1/2 right-3 transform -translate-y-1/2 h-5 w-5 text-green-700 cursor-pointer">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-          d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-          d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-  </svg>
-
-  <!-- Eye Slash Icon -->
-  <svg *ngIf="showPassword" (click)="togglePasswordVisibility()"
-       xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-       stroke="currentColor" class="absolute top-1/2 right-3 transform -translate-y-1/2 h-5 w-5 text-green-700 cursor-pointer">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-          d="M13.875 18.825A10.05 10.05 0 0112 19c-4.477 0-8.268-2.943-9.542-7a9.964 9.964 0 012.388-4.518M6.354 6.354A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.542 7a9.961 9.961 0 01-4.173 5.072M6.354 6.354L3 3m0 0l18 18" />
-  </svg>
-</div>
-
-        <!-- Checkbox and Forgot -->
-        <div class="flex mt-5 justify-between items-center">
-          <label class="flex items-center text-xs md:text-xs">
-            <input type="checkbox" class="mr-2 border-gray-300 rounded" />
-            Keep me logged in
-          </label>
-          <span class="text-green-700 text-xs md:text-xs cursor-pointer ">Forgot password?</span>
+        <div class="relative">
+          <input
+            [type]="showPassword ? 'text' : 'password'"
+            formControlName="Password"
+            class="peer block w-full px-3 pt-4 pb-2 text-xs md:text-sm text-gray-900 border-b-2 border-gray-300 focus:outline-none focus:border-green-600 transition-all duration-300"
+            placeholder="Password"
+          />
+          <svg *ngIf="!showPassword" (click)="togglePasswordVisibility()"
+               xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+               stroke="currentColor" class="absolute top-1/2 right-3 -translate-y-1/2 h-5 w-5 text-green-700 cursor-pointer">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+          </svg>
+          <svg *ngIf="showPassword" (click)="togglePasswordVisibility()"
+               xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+               stroke="currentColor" class="absolute top-1/2 right-3 -translate-y-1/2 h-5 w-5 text-green-700 cursor-pointer">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M13.875 18.825A10.05 10.05 0 0112 19c-4.477 0-8.268-2.943-9.542-7a9.964 9.964 0 012.388-4.518M6.354 6.354L3 3m0 0l18 18" />
+          </svg>
         </div>
 
-        <!-- Submit Button -->
-        <div class="mt-8">
+        <div class="flex justify-between items-center text-xs md:text-sm">
+          <label class="flex items-center">
+            <input type="checkbox" class="mr-2 rounded border-gray-300" />
+            Keep me logged in
+          </label>
+          <span class="text-green-700 cursor-pointer">Forgot password?</span>
+        </div>
+
+        <div class="mt-6">
           <button
             type="submit"
-            class="group text-white bg-gradient-to-tl from-[#004D40] to-[#00695C] 
-                   hover:from-[#00796B] hover:to-[#1B5E20] flex mx-auto border-black 
-                   items-center gap-4 border-2 rounded-md w-1/3
-                   md:max-w-[150px] text-center py-2 transition-all duration-300"
+            class="w-full md:w-2/3 mx-auto block bg-gradient-to-tl from-[#004D40] to-[#00695C] hover:from-[#00796B] hover:to-[#1B5E20] text-white font-semibold text-xs py-2 rounded-md shadow-md transition duration-300"
           >
-            <span class="mx-auto font-semibold text-xs md:text-xs">Log In</span>
+            Log In
           </button>
         </div>
       </form>

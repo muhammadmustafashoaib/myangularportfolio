@@ -8,11 +8,18 @@ import { Title } from '@angular/platform-browser';
 })
 export class DashboardCompiledComponent implements OnInit {
   users: any[] = [];
+  showTechPopup = false;
+
+  
   constructor(private http: HttpClient, private title: Title) {
     this.loadUsers();
   }
+
   ngOnInit(): void {
     this.title.setTitle('Dashboard');
+    setTimeout(() => {
+      this.showTechPopup = true;
+    }, 500); // Show after slight delay
   }
 
   loadUsers() {
@@ -21,5 +28,9 @@ export class DashboardCompiledComponent implements OnInit {
   isSidebarOpen = false;
 
 toggleSidebar() {
-  this.isSidebarOpen = !this.isSidebarOpen;}
+  this.isSidebarOpen = !this.isSidebarOpen;
+}
+closePopup() {
+  this.showTechPopup = false;
+}
 }
