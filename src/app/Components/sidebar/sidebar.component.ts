@@ -19,6 +19,8 @@ export class SidebarComponent {
     { icon: 'https://www.svgrepo.com/show/334600/detail.svg', label: 'Business Listing', route: '/yourdetails' },
 
     { icon: 'https://www.svgrepo.com/show/520828/logout.svg', label: 'Logout' },
+{ icon: 'https://www.svgrepo.com/show/514418/about-you.svg', label: 'About Me',route: '/about' }
+
   ];
 
   showSidebar = false;

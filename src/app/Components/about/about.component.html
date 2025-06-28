@@ -41,17 +41,23 @@
         </p>
 
         <!-- Experience -->
-        <h2 class="text-xl font-semibold mt-8 mb-3 text-gray-900 border-b pb-1 border-gray-300">Experience</h2>
+        <h2 class="text-xl font-semibold mt-4 mb-3 text-gray-900 border-b pb-1 border-gray-300">Experience</h2>
         <div *ngFor="let job of experience" class="mb-4">
           <h3 class="text-lg font-bold text-gray-900">
             {{ job.title }} <span class="text-gray-600 font-medium">– {{ job.company }}</span>
           </h3>
           <p class="text-sm italic text-gray-500">{{ job.years }}</p>
           <p class="text-gray-700 mt-1">{{ job.details }}</p>
+           <h2 class="text-xl font-semibold mt-8 mb-3 text-gray-900 border-b pb-1 border-gray-300">Apps Worked On</h2>
+        <ul class="list-disc ml-5 text-gray-700 text-sm sm:text-base space-y-1">
+          <li *ngFor="let project of projects" >
+            <span class="font-semibold">{{ project.name }}</span> — {{ project.version }}
+          </li>
+        </ul>
         </div>
 
         <!-- Technologies -->
-        <h2 class="text-xl font-semibold mt-8 mb-3 text-gray-900 border-b pb-1 border-gray-300">Technologies</h2>
+        <h2 class="text-xl font-semibold mt-4 mb-3 text-gray-900 border-b pb-1 border-gray-300">Technologies</h2>
         <div class="flex flex-wrap gap-3 items-center cursor-pointer">
           <div *ngFor="let tech of technologies" class="flex items-center gap-2 bg-gray-100 text-black px-3 py-1 rounded-full text-sm font-semibold shadow-sm">
             <img [src]="tech.icon" [alt]="tech.name" class="h-5 w-5" />
@@ -60,12 +66,7 @@
         </div>
 
         <!-- Apps -->
-        <h2 class="text-xl font-semibold mt-8 mb-3 text-gray-900 border-b pb-1 border-gray-300">Apps Worked On</h2>
-        <ul class="list-disc ml-5 text-gray-700 text-sm sm:text-base space-y-1">
-          <li *ngFor="let project of projects">
-            <span class="font-semibold">{{ project.name }}</span> — {{ project.version }}
-          </li>
-        </ul>
+       
       </div>
     </div>
   </div>
