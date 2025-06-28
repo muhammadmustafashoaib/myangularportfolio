@@ -33,9 +33,8 @@ technologies = [
   { name: 'Angular', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg' },
   { name: 'Bootstrap', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg' },
   { name: 'Tailwind CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg' },
-  { name: 'PrimeNG', icon: 'https://www.primefaces.org/wp-content/uploads/2020/05/primeng-svg.svg' },
+  { name: 'PrimeNG', icon: 'https://www.primefaces.org/wp-content/uploads/2020/05/primeng-logo.png' }
 ];
-
 
   projects = [
     { name: 'Eureeca', version: 'Angular 16' },
