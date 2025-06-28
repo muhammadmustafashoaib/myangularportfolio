@@ -15,6 +15,10 @@ import { HomeComponent } from './Components/home/home.component';
 import { FaqsComponent } from './Components/faqs/faqs.component';
 import { authGuard } from './auth.guard';
 import { ProposalsComponent } from './Components/proposals/proposals.component';
+import { AboutComponent } from './Components/about/about.component';
+import { Plumbing1Component } from './Components/plumbing1/plumbing1.component';
+import { Plumber2Component } from './plumber2/plumber2.component';
+import { Plumbing3Component } from './plumbing3/plumbing3.component';
     const routes: Routes = [
       { 
         path: 'dashboard',
@@ -30,6 +34,12 @@ import { ProposalsComponent } from './Components/proposals/proposals.component';
       { path: 'sales-add', component: SalesAddcompComponent},
       { path: 'faqs', component: FaqsComponent },
       {path:'investmentproposal', component: ProposalsComponent },
+      {path:'about', component:AboutComponent},
+            {path:'plumbing', component:Plumbing1Component},
+            {path:'plumbing2',component:Plumber2Component},
+                        {path:'plumbing3',component:Plumbing3Component},
+
+
       
       { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
     ];

@@ -33,6 +33,11 @@ import { SalesAddComponent } from './Components/sales-add/sales-add.component';
 import { SalesListComponent } from './Components/sales-list/sales-list.component';
 import { SalesAddcompComponent } from './Components/sales-addcomp/sales-addcomp.component';
 import { ProposalsComponent } from './Components/proposals/proposals.component';
+import { AboutComponent } from './Components/about/about.component';
+import { PlumbingMainComponent } from './Components/plumbing-main/plumbing-main.component';
+import { Plumbing1Component } from './Components/plumbing1/plumbing1.component';
+import { Plumber2Component } from './plumber2/plumber2.component';
+import { Plumbing3Component } from './plumbing3/plumbing3.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +68,11 @@ import { ProposalsComponent } from './Components/proposals/proposals.component';
     SalesListComponent,
     SalesAddcompComponent,
     ProposalsComponent,
+    AboutComponent,
+    PlumbingMainComponent,
+    Plumbing1Component,
+    Plumber2Component,
+    Plumbing3Component,
 
   
        
