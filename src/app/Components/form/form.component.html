@@ -1,164 +1,101 @@
 <form 
   [formGroup]="allocationForm" 
   (ngSubmit)="onSubmit()" 
-  class="w-full  mx-auto mt-5 p-4 sm:p-5 md:p-6 bg-blue-50 rounded-lg shadow">
+  class="w-full max-w-4xl mx-auto mt-3 p-6 sm:p-10 rounded-3xl shadow-xl bg-gradient-to-br from-indigo-50 via-white to-purple-100 backdrop-blur-md border border-indigo-100 animate-fade-in">
 
-  <h1 class="text-base sm:text-lg md:text-xl font-bold text-gray-800 mb-5 text-center">
-    Registration Form
+  <h1 class="text-2xl sm:text-3xl font-extrabold text-center text-indigo-800 mb-8 tracking-tight leading-tight">
+     Registration Form
   </h1>
 
-  <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
     
-    <!-- Business Units -->
-    <div>
-      <label class="block text-xs font-medium   mb-1">Business Units</label>
-      <select formControlName="distributions" 
-              [ngClass]="getControlClass('distributions')" 
-              class="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400 text-xs">
-        <option value=""  >Select Business Units</option>
-        <option *ngFor="let dist of distributions" [value]="dist">{{ dist }}</option>
-      </select>
-      <div *ngIf="allocationForm.get('distributions')?.touched && allocationForm.get('distributions')?.invalid" 
-           class="text-red-500 text-xs mt-1">
-        Business Units is required.
+    <!-- Dynamic Select Fields -->
+    <ng-container *ngFor="let field of [
+      { label: 'Business Units', name: 'distributions', options: distributions },
+      { label: 'Stakeholder', name: 'principles', options: principles },
+      { label: 'Contact Person', name: 'channel', options: channels },
+      { label: 'Connect', name: 'connect', options: connects },
+      { label: 'Designation', name: 'designation', options: designations }
+    ]">
+      <div class="flex flex-col gap-1">
+        <label class="text-sm font-medium text-gray-700">{{ field.label }}</label>
+        <select 
+          [formControlName]="field.name" 
+          [ngClass]="getControlClass(field.name)" 
+          class="px-4 py-2.5 rounded-full bg-white border border-gray-300 text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none transition-shadow duration-200 shadow-sm">
+          <option value="">Select {{ field.label }}</option>
+          <option *ngFor="let opt of field.options" [value]="opt">{{ opt }}</option>
+        </select>
+        <div *ngIf="allocationForm.get(field.name)?.touched && allocationForm.get(field.name)?.invalid" class="text-red-500 text-xs">
+          {{ field.label }} is required.
+        </div>
       </div>
-    </div>
-
-    <!-- Stakeholder -->
-    <div>
-      <label class="block text-xs font-medium   mb-1">Stakeholder</label>
-      <select formControlName="principles" 
-              [ngClass]="getControlClass('principles')" 
-              class="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400 text-xs">
-        <option value=""  >Select Stakeholder</option>
-        <option *ngFor="let p of principles" [value]="p">{{ p }}</option>
-      </select>
-      <div *ngIf="allocationForm.get('principles')?.touched && allocationForm.get('principles')?.invalid" 
-           class="text-red-500 text-xs mt-1">
-        Stakeholder is required.
-      </div>
-    </div>
-
-    <!-- Contact Person -->
-    <div>
-      <label class="block text-xs font-medium   mb-1">Contact Person</label>
-      <select formControlName="channel" 
-              [ngClass]="getControlClass('channel')" 
-              class="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400 text-xs">
-        <option value=""  >Select Contact Person</option>
-        <option *ngFor="let ch of channels" [value]="ch">{{ ch }}</option>
-      </select>
-      <div *ngIf="allocationForm.get('channel')?.touched && allocationForm.get('channel')?.invalid" 
-           class="text-red-500 text-xs mt-1">
-        Contact Person is required.
-      </div>
-    </div>
-
-    <!-- Connect -->
-    <div>
-      <label class="block text-xs font-medium   mb-1">Connect</label>
-      <select formControlName="connect" 
-              [ngClass]="getControlClass('connect')" 
-              class="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400 text-xs">
-        <option value=""  >Select Connect</option>
-        <option *ngFor="let con of connects" [value]="con">{{ con }}</option>
-      </select>
-      <div *ngIf="allocationForm.get('connect')?.touched && allocationForm.get('connect')?.invalid" 
-           class="text-red-500 text-xs mt-1">
-        Connect is required.
-      </div>
-    </div>
+    </ng-container>
 
     <!-- Start Date -->
-    <div>
-      <label class="block text-xs font-medium   mb-1">Start Date</label>
-      <input type="date" 
-             formControlName="startDate" 
-             [ngClass]="getControlClass('startDate')" 
-             class="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400 text-xs">
-      <div *ngIf="allocationForm.get('startDate')?.touched && allocationForm.get('startDate')?.invalid" 
-           class="text-red-500 text-xs mt-1">
+    <div class="flex flex-col gap-1">
+      <label class="text-sm font-medium text-gray-700">Start Date</label>
+      <input 
+        type="date" 
+        formControlName="startDate" 
+        [ngClass]="getControlClass('startDate')" 
+        class="px-4 py-2.5 rounded-full bg-white border border-gray-300 text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none transition-shadow duration-200 shadow-sm" />
+      <div *ngIf="allocationForm.get('startDate')?.touched && allocationForm.get('startDate')?.invalid" class="text-red-500 text-xs">
         Start Date is required.
       </div>
     </div>
 
     <!-- End Date -->
-    <div>
-      <label class="block text-xs font-medium   mb-1">End Date</label>
-      <input type="date" 
-             formControlName="endDate" 
-             [ngClass]="getControlClass('endDate')" 
-             class="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400 text-xs">
-      <div *ngIf="allocationForm.get('endDate')?.touched && allocationForm.get('endDate')?.invalid" 
-           class="text-red-500 text-xs mt-1">
+    <div class="flex flex-col gap-1">
+      <label class="text-sm font-medium text-gray-700">End Date</label>
+      <input 
+        type="date" 
+        formControlName="endDate" 
+        [ngClass]="getControlClass('endDate')" 
+        class="px-4 py-2.5 rounded-full bg-white border border-gray-300 text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none transition-shadow duration-200 shadow-sm" />
+      <div *ngIf="allocationForm.get('endDate')?.touched && allocationForm.get('endDate')?.invalid" class="text-red-500 text-xs">
         End Date is required.
       </div>
     </div>
 
-    <!-- Designation -->
-    <div>
-      <label class="block text-xs font-medium   mb-1">Designation</label>
-      <select formControlName="designation" 
-              [ngClass]="getControlClass('designation')" 
-              class="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400 text-xs">
-        <option value=""  >Select Designation</option>
-        <option *ngFor="let d of designations" [value]="d">{{ d }}</option>
-      </select>
-      <div *ngIf="allocationForm.get('designation')?.touched && allocationForm.get('designation')?.invalid" 
-           class="text-red-500 text-xs mt-1">
-        Designation is required.
-      </div>
-    </div>
-
     <!-- Description -->
-    <div>
-      <label class="block text-xs font-medium   mb-1">Description</label>
-      <input type="text" 
-             formControlName="description" 
-             [ngClass]="getControlClass('description')" 
-             placeholder="Enter Description" 
-             class="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400 text-xs">
-      <div *ngIf="allocationForm.get('description')?.touched && allocationForm.get('description')?.invalid" 
-           class="text-red-500 text-xs mt-1">
+    <div class="sm:col-span-2 flex flex-col gap-1">
+      <label class="text-sm font-medium text-gray-700">Description</label>
+      <input 
+        type="text" 
+        formControlName="description" 
+        [ngClass]="getControlClass('description')" 
+        placeholder="Describe the purpose..." 
+        class="px-4 py-2.5 rounded-xl bg-white border border-gray-300 text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none transition-shadow duration-200 shadow-sm" />
+      <div *ngIf="allocationForm.get('description')?.touched && allocationForm.get('description')?.invalid" class="text-red-500 text-xs">
         Description is required.
       </div>
     </div>
   </div>
 
-  <div class="w-full flex justify-center mt-5">
+  <div class="w-full flex justify-center mt-8">
     <button 
       type="submit" 
       [disabled]="allocationForm.invalid" 
-      class="bg-blue-600 text-white px-5 py-2 rounded-md shadow 
-             hover:bg-blue-700 transition 
-              :bg-gray-400  :cursor-not-allowed text-sm">
-      Submit
+      class="bg-indigo-600 text-white px-8 py-2.5 rounded-full shadow-lg hover:bg-indigo-700 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed transition-transform duration-150 font-semibold text-sm tracking-wide">
+       Submit
     </button>
   </div>
-  <div 
-  *ngIf="showConfirmDialog"
-  class="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
 
-  <div class="bg-white p-4 sm:p-6 rounded shadow-lg w-11/12 sm:w-96 text-xs sm:text-sm">
-    <h2 class="text-base font-semibold mb-4 text-center">Confirm Submission</h2>
-    <p class="text-center mb-4">Are you sure you want to submit the form?</p>
-    <div class="flex justify-center gap-4">
-      <button 
-        (click)="handleConfirmation(true)" 
-        class="bg-blue-600 text-white px-4 py-1 rounded hover:bg-blue-700 text-xs sm:text-sm">
-        Yes
-      </button>
-      <button 
-        (click)="handleConfirmation(false)" 
-        class="bg-gray-400 text-white px-4 py-1 rounded hover:bg-gray-500 text-xs sm:text-sm">
-        No
-      </button>
+  <!-- Confirm Dialog -->
+  <div *ngIf="showConfirmDialog" class="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
+    <div class="bg-white p-6 rounded-2xl shadow-xl w-11/12 sm:w-96 text-sm animate-fade-in">
+      <h2 class="text-lg font-bold text-center text-indigo-700 mb-3">Confirm Submission</h2>
+      <p class="text-center text-gray-600 mb-4">Are you sure you want to submit?</p>
+      <div class="flex justify-center gap-4">
+        <button (click)="handleConfirmation(true)" class="bg-indigo-600 text-white px-5 py-2 rounded-full hover:bg-indigo-700 transition text-sm font-medium">Yes</button>
+        <button (click)="handleConfirmation(false)" class="bg-gray-400 text-white px-5 py-2 rounded-full hover:bg-gray-500 transition text-sm font-medium">No</button>
+      </div>
     </div>
   </div>
-</div>
 
-<!-- Success Message -->
-<div *ngIf="showSuccessMsg" class="mt-4 text-green-600 text-center text-xs sm:text-sm">
-  ✅ Form submitted successfully!
-</div>
+  <!-- Success Message -->
+  <div *ngIf="showSuccessMsg" class="mt-6 text-green-600 text-center text-sm font-medium animate-fade-in">
+    🎉 Form submitted successfully!
+  </div>
 </form>
