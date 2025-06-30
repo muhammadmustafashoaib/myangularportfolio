@@ -9,7 +9,7 @@ export class AboutComponent {
 name = 'Mustafa Shoaib';
 photoUrl = 'https://avatars.githubusercontent.com/u/152904440?v=4';
 
-  bio = `I'm Mustafa — a frontend developer with a background in dietetics.
+  bio = `I'm Mustafa — a frontend developer with a unique background in dietetics.
 
 I started my career using tools like Cronometer and the USDA database to help people manage their nutrition. That hands-on experience with data and user-focused tools led me to explore web development.
 
@@ -21,7 +21,7 @@ Since then, I’ve worked on real-world Angular projects like Eureeca (Angular 1
       title: 'Angular Frontend Developer',
       company: 'Raheem Solutions, Johar Town, Lahore',
       years: 'May 2024 – April 2025',
-      details: 'Built scalable Angular apps with modern UI using TypeScript, Tailwind, Bootstrap, and PrimeNG.'
+      details: 'Built and maintained scalable Angular apps with modern UI using TypeScript, Tailwind CSS, Bootstrap, and PrimeNG.'
     }
   ];
 
@@ -38,6 +38,6 @@ technologies = [
 
  projects = [
   { name: 'Eureeca', description: 'Based on Angular 16, Tailwind CSS, TypeScript' },
-  { name: 'SalesAssist', description: 'Based on Angular 11, Bootstrap, PrimeNG, Typescript' }
+  { name: 'SalesAssist', description: 'Based on Angular 11, Bootstrap, PrimeNG, TypeScript' }
 ];
 }
