@@ -7,7 +7,7 @@ import { Route, Router } from '@angular/router';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent {
-  constructor(private router: Router) {}
+ constructor(private router: Router) {}
 
   menuItems = [
     { icon: 'https://www.svgrepo.com/show/501525/dashboard.svg', label: 'Dashboard', route: '/dashboard' },
@@ -17,10 +17,8 @@ export class SidebarComponent {
     { icon: 'https://www.svgrepo.com/show/105745/faq.svg', label: 'FAQs', route: '/faqs' },
     { icon: 'https://www.svgrepo.com/show/482995/sales-up-graph.svg', label: 'Sales', route: '/sales' },
     { icon: 'https://www.svgrepo.com/show/334600/detail.svg', label: 'Business Listing', route: '/yourdetails' },
-
     { icon: 'https://www.svgrepo.com/show/520828/logout.svg', label: 'Logout' },
-{ icon: 'https://www.svgrepo.com/show/514418/about-you.svg', label: 'About Me',route: '/about' }
-
+    { icon: 'https://www.svgrepo.com/show/514418/about-you.svg', label: 'About Me', route: '/about' }
   ];
 
   showSidebar = false;
@@ -36,10 +34,9 @@ export class SidebarComponent {
   }
 
   checkScreenSize(): void {
-    this.isLargeScreen = window.innerWidth >= 1024; // Tailwind's 'lg' breakpoint
-    if (this.isLargeScreen) {
-      this.showSidebar = false; // Optional: reset sidebar toggle on desktop
-    }
+    this.isLargeScreen = window.innerWidth >= 1024;
+    // Optional: auto-show on large screen
+    this.showSidebar = this.isLargeScreen;
   }
 
   toggleSidebar(): void {
