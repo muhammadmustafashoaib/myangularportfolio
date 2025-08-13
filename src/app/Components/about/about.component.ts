@@ -43,7 +43,7 @@ projects = [
     name: 'Calorie App', 
     description: 'Build on Angular 16, Tailwind CSS, TypeScript', 
     route: 'https://mustafacalorieapp.netlify.app/',  // internal route
-    image: 'https://plus.unsplash.com/premium_photo-1707242995268-59f778c70390?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGNhbG9yaWUlMjBhcHB8ZW58MHx8MHx8fDA%3D',
+    image: 'https://play-lh.googleusercontent.com/MhvfJAsoEvsESxp9AQg3KOwWyhRRAB1HJWlLCWmLnDucDC6bG81XsmwyVD1zbde1UZM',
     external: true
   },
   { 
