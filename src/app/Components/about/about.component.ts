@@ -49,7 +49,7 @@ projects = [
   { 
     name: 'Investment App', 
     description: 'Made on Angular 11, Bootstrap, PrimeNG, TypeScript', 
-    route: 'https://mustafasangularportfolio.netlify.app/',  // external URL
+    route: 'https://mustafasangularportfolio.netlify.app/dashboard',  // external URL
     image: 'https://plus.unsplash.com/premium_photo-1682310075673-b408eb1ca6fd?q=80&w=1212&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     external: true
   }
