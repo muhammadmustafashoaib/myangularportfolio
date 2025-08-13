@@ -41,16 +41,16 @@ technologies = [
 projects = [
   { 
     name: 'Calorie App', 
-    description: 'Angular 16, Tailwind CSS, TypeScript', 
+    description: 'Build on Angular 16, Tailwind CSS, TypeScript', 
     route: 'https://mustafacalorieapp.netlify.app/',  // internal route
-    image: 'assets/images/calorie-bg.jpg',
+    image: 'https://images.unsplash.com/photo-1725289571284-98f89d2cbba3?q=80&w=1228&auto=format&fit=crop',
     external: false
   },
   { 
     name: 'Investment App', 
-    description: 'Angular 11, Bootstrap, PrimeNG, TypeScript', 
+    description: 'Made on Angular 11, Bootstrap, PrimeNG, TypeScript', 
     route: 'https://mustafasangularportfolio.netlify.app/',  // external URL
-    image: 'assets/images/investment-bg.jpg',
+    image: 'https://plus.unsplash.com/premium_photo-1682310075673-b408eb1ca6fd?q=80&w=1212&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     external: true
   }
 ];
