@@ -40,14 +40,14 @@ Since then, I’ve worked on real-world Angular projects like Eureeca (Angular 1
 projects = [
   { 
     name: 'Calorie App', 
-    description: 'Made using Tailwind CSS', 
+    description: 'Made using Angular & Tailwind CSS', 
     route: 'https://mustafacalorieapp.netlify.app/',  // internal route
     image: 'https://play-lh.googleusercontent.com/MhvfJAsoEvsESxp9AQg3KOwWyhRRAB1HJWlLCWmLnDucDC6bG81XsmwyVD1zbde1UZM',
     external: true
   },
   { 
     name: 'Investment App', 
-    description: 'Made using Bootstrap, PrimeNG, SCSS', 
+    description: 'Made using Angular, Bootstrap, PrimeNG, SCSS', 
     route: 'https://mustafasangularportfolio.netlify.app/dashboard',  // external URL
     image: 'https://plus.unsplash.com/premium_photo-1682310075673-b408eb1ca6fd?q=80&w=1212&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     external: true
